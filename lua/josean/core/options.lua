@@ -43,6 +43,8 @@ vim.api.nvim_create_autocmd("FileType", {
     "toml",
     "lua", -- Neovim config files use 2 spaces
     "ruby",
+    "dockerfile",
+    "Shell",
   },
   callback = function()
     vim.opt_local.tabstop = 2
