@@ -1,43 +1,48 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
-
 local opt = vim.opt
 
 opt.relativenumber = true
 opt.number = true
 
 -----------------------------------------------------------
--- 1. CẤU HÌNH THỤT ĐẦU DÒNG (INDENTATION)
+-- 1. INDENTATION CONFIGURATION
 -----------------------------------------------------------
 
--- === NHÓM 1: MẶC ĐỊNH LÀ 4 SPACES ===
--- Tự động áp dụng cho:
+-- === GROUP 1: DEFAULT = 4 SPACES ===
+-- Automatically applied for:
 -- 1. Dockerfile
--- 2. Shell Script (Bash, Zsh, Sh)
--- 3. Git (gitconfig, gitcommit)
--- 4. Các ngôn ngữ Backend/System: Python, C, C++, Java, Go, Rust, PHP...
-opt.tabstop = 4       -- 1 tab = 4 spaces
-opt.shiftwidth = 4    -- Thụt lề 4 spaces
-opt.expandtab = true  -- Chuyển tab thành spaces
-opt.autoindent = true -- Copy thụt lề từ dòng trên
+-- 2. Shell scripts (Bash, Zsh, Sh)
+-- 3. Git-related files (gitconfig, gitcommit)
+-- 4. Backend / System languages:
+--    Python, C, C++, Java, Go, Rust, PHP, etc.
+opt.tabstop = 4 -- One tab equals 4 spaces
+opt.shiftwidth = 4 -- Indent using 4 spaces
+opt.expandtab = true -- Convert tabs to spaces
+opt.autoindent = true -- Copy indentation from previous line
 
--- === NHÓM 2: NGOẠI LỆ 2 SPACES ===
--- Tự động chuyển về 2 spaces khi mở các loại file này
+-- === GROUP 2: EXCEPTIONS = 2 SPACES ===
+-- Automatically switch to 2 spaces for these filetypes
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { 
+  pattern = {
     -- Web Front-end
-    "html", "css", "scss", 
-    "javascript", "typescript", 
-    "javascriptreact", "typescriptreact", -- React (JSX/TSX)
-    "vue", "svelte", 
-    
-    -- Config Data & Script nhẹ
-    "json", 
-    "yaml", -- Quan trọng: docker-compose.yml dùng cái này (2 spaces)
-    "xml", 
+    "html",
+    "css",
+    "scss",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact", -- React (JSX / TSX)
+    "vue",
+    "svelte",
+
+    -- Lightweight config & data formats
+    "json",
+    "yaml", -- Important: docker-compose.yml uses 2 spaces
+    "xml",
     "toml",
-    "lua",  -- File config Neovim dùng 2 spaces
-    "ruby"
+    "lua", -- Neovim config files use 2 spaces
+    "ruby",
   },
   callback = function()
     vim.opt_local.tabstop = 2
@@ -46,29 +51,29 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -----------------------------------------------------------
--- 2. CÁC CẤU HÌNH KHÁC (GIỮ NGUYÊN)
+-- 2. OTHER SETTINGS (UNCHANGED)
 -----------------------------------------------------------
 
--- Hiển thị số dòng
+-- Line numbers
 opt.relativenumber = true
 opt.number = true
 
--- Không ngắt dòng
+-- Disable line wrapping
 opt.wrap = false
 
--- Tìm kiếm
+-- Search behavior
 opt.ignorecase = true
 opt.smartcase = true
 
--- Giao diện
+-- UI / Appearance
 opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
--- Hệ thống
-opt.clipboard:append("unnamedplus") -- Clipboard
-opt.splitright = true    -- Chia màn hình
-opt.splitbelow = true
-opt.swapfile = false     -- Tắt swap
-opt.backspace = "indent,eol,start"
+-- System behavior
+opt.clipboard:append("unnamedplus") -- Use system clipboard
+opt.splitright = true -- Vertical split to the right
+opt.splitbelow = true -- Horizontal split to the bottom
+opt.swapfile = false -- Disable swap file
+opt.backspace = "indent,eol,start" -- Backspace behavior
