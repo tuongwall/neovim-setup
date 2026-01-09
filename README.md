@@ -116,10 +116,10 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
 #### Substitute
 
 | Key Mapping | Action                      |
-| :---------- | :-------------------------- | ---- |
+| :---------- | :-------------------------- |
 | `s{motion}` | Substitute with register    |
 | `ss`        | Substitute line             |
-| `S`         | Substitute visual selection | f395 |
+| `S`         | Substitute visual selection |
 
 ### 8. <img width="25" height="25" alt="Image" src="https://github.com/user-attachments/assets/c8d74d03-57d3-4913-98a6-ee6917512922" /> Docker (LazyDocker)
 
