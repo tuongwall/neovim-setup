@@ -116,16 +116,36 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
 #### Substitute
 
 | Key Mapping | Action                      |
-| :---------- | :-------------------------- |
+| :---------- | :-------------------------- | ---- |
 | `s{motion}` | Substitute with register    |
 | `ss`        | Substitute line             |
-| `S`         | Substitute visual selection |f395
+| `S`         | Substitute visual selection | f395 |
 
-### 8.  <img width="25" height="25" alt="Image" src="https://github.com/user-attachments/assets/c8d74d03-57d3-4913-98a6-ee6917512922" /> Docker (LazyDocker)
+### 8. <img width="25" height="25" alt="Image" src="https://github.com/user-attachments/assets/c8d74d03-57d3-4913-98a6-ee6917512922" /> Docker (LazyDocker)
 
 | Key Mapping  | Action                  |
 | :----------- | :---------------------- |
 | `<leader>ld` | Open **L**azy**D**ocker |
+
+### 9. 🛢️ Database Management (Dadbod)
+
+**General & UI Drawer**
+
+| Key Mapping  | Action                     |
+| :----------- | :------------------------- |
+| `<leader>db` | Toggle **D**ata**b**ase UI |
+| `A`          | **A**dd new connection     |
+| `S`          | Open new **S**QL query     |
+| `d`          | **D**elete connection      |
+| `r`          | **R**ename connection      |
+
+**SQL Buffer (Inside .sql files)**
+
+| Key Mapping    | Action                          |
+| :------------- | :------------------------------ |
+| `<leader>S`    | Execute **S**QL Query           |
+| `<leader>W`    | **S**ave Query                  |
+| `Ctrl + Space` | Trigger Table/Column Completion |
 
 ---
 
@@ -143,6 +163,6 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
 3. **Start Neovim**
    ```bash
    nvim
+   ```
 
-
-**Note:** You might see some errors during the first installation. Simply restart Neovim (`:q` then open nvim again) and run `:checkhealth` to verify everything is set up correctly.
+**note:** you might see some errors during the first installation. simply restart neovim (`:q` then open nvim again) and run `:checkhealth` to verify everything is set up correctly.
