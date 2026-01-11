@@ -18,6 +18,7 @@ opt.number = true
 --    Python, C, C++, Java, Go, Rust, PHP, etc.
 opt.tabstop = 4 -- One tab equals 4 spaces
 opt.shiftwidth = 4 -- Indent using 4 spaces
+opt.softtabstop = 4
 opt.expandtab = true -- Convert tabs to spaces
 opt.autoindent = true -- Copy indentation from previous line
 
@@ -44,11 +45,14 @@ vim.api.nvim_create_autocmd("FileType", {
     "lua", -- Neovim config files use 2 spaces
     "ruby",
     "dockerfile",
-    "Shell",
+    "sh",
+    "bash",
+    "zsh",
   },
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
   end,
 })
 
