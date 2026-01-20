@@ -5,6 +5,11 @@ A highly optimized, feature-rich Neovim configuration built for speed, productiv
 ![Neovim](https://img.shields.io/badge/Neovim-v0.9+-57A143?style=for-the-badge&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/Lua-Config-blue?style=for-the-badge&logo=lua&logoColor=white)
 
+![Install](https://img.shields.io/badge/Install-One%20Command-success?style=for-the-badge&logo=gnu-bash)
+![Linux](https://img.shields.io/badge/Linux-Supported-FCC624?style=for-the-badge&logo=linux)
+![macOS](https://img.shields.io/badge/macOS-Supported-000000?style=for-the-badge&logo=apple)
+![Windows](https://img.shields.io/badge/Windows-WSL-blue?style=for-the-badge&logo=windows)
+
 ![Neovim Demo Interface](img.png)
 _(Actual Interface: File Tree, Status Line, and LSP support)_
 
@@ -22,7 +27,6 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
 
 - **Leader Key:** `<Space>`
 - **Plugin Manager:** [lazy.nvim](https://github.com/folke/lazy.nvim)
-- **Colorscheme:** OneDarkPro
 
 ---
 
@@ -147,6 +151,35 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
 | `<leader>W`    | **S**ave Query                  |
 | `Ctrl + Space` | Trigger Table/Column Completion |
 
+### 10. 🌐 Live Server (HTML / CSS)
+
+| Key Mapping  | Action             |
+| :----------- | :----------------- |
+| `<leader>ls` | Start Live Server  |
+| `<leader>lt` | Stop Live Server   |
+| `<leader>ll` | Toggle Live Server |
+
+- Runs a local development server on `http://127.0.0.1:5500`
+- Auto reload on save
+- Automatically opens the current HTML file in browser
+
+### 11. 📝 Markdown `.md`
+
+| Key Mapping  | Action                  |
+| :----------- | :---------------------- |
+| `<leader>mp` | Markdown Preview Toggle |
+
+### 12. ▶️ Runcode
+
+| Key             | Action                 |
+| :-------------- | :--------------------- |
+| `F5`            | Run code               |
+| `F9`            | Toggle Breakpoint      |
+| `F10`           | Step Over              |
+| `F11`           | Step Into              |
+| `F12`           | Step Out               |
+| `<Leader> + F5` | Start / Continue Debug |
+
 ---
 
 ## 📦 Installation
@@ -160,9 +193,85 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
    ```bash
    git clone https://github.com/tuongwall/neovim-setup.git ~/.config/nvim
    ```
-3. **Start Neovim**
+3. **Download the necessary items:**
+
+- Node.js (give LSP, Live Server, Treesitter)
+
+  ```bash
+  # ARCH
+  sudo pacman -S nodejs npm
+
+  # Ubuntu
+  sudo apt install nodejs npm
+  ```
+
+- Live Server
+  ```bash
+  npm install -g live-server
+  ```
+- Tmux
+
+  ```bash
+  # ARCH
+  sudo pacman -S tmux
+
+  # Ubuntu
+  sudo apt install tmux
+  ```
+
+- fd (File finder)
+
+  ```bash
+  # ARCH
+  sudo pacman -S fd
+
+  #Ubuntu
+  sudo apt install fd-find
+  ```
+
+4. **Optional but recommended**
+
+- Lazygit
+
+  ```bash
+  # Arch
+  sudo pacman -S lazygit
+
+  # Ubuntu
+  sudo apt install lazygit
+  ```
+
+- Docker (for LazyDocker)
+
+  ```bash
+  # Arch
+  sudo pacman -S docker docker-compose
+
+  # Ubuntu
+  sudo apt install docker docker-compose
+  ```
+
+- **Database (Dadbod)**: install database clients if you use SQL features
+
+  ```bash
+  # Arch
+  # PostgreSQL
+  sudo pacman -S postgresql
+  # MySQL
+  sudo pacman -S mysql
+
+  #Ubuntu
+  # PostgreSQL
+  sudo apt install postgresql
+  # MySQL
+  sudo apt install mysql
+  ```
+
+5. **Start Neovim**
    ```bash
    nvim
    ```
+6. ✅ **Quicheck** Run this inside Neovim
+   `:checkhealth`
 
 **note:** you might see some errors during the first installation. simply restart neovim (`:q` then open nvim again) and run `:checkhealth` to verify everything is set up correctly.

@@ -34,6 +34,7 @@ require("lazy").setup({
   -- Configuration for detecting changes in the config files
   change_detection = {
     -- Disable the "Config change detected" notification when you save a .lua file
-    notify = false, 
+    notify = false,
   },
 })
+

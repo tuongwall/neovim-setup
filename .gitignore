@@ -31,3 +31,6 @@ session/
 # Ignore files containing sensitive API keys or machine-specific settings
 # Example:
 # lua/custom/secrets.lua
+
+db_ui/
+
