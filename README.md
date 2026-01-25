@@ -18,8 +18,10 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
 - **IDE Experience:** Includes File Explorer (NvimTree), Fuzzy Finder, and Tabs.
 - **Smart Coding:** Full LSP support (Go-to-definition, Autocomplete, Rename) just like a pro IDE.
 - **Git Power:** Manage source control directly with LazyGit and Gitsigns.
-- **Beautiful UI:** Polished interface with OneDarkPro theme, icons, and status lines.
+- **Beautiful UI:** Polished interface with OneDarkPro backgroud `#000000` theme, icons, and status lines.
 - **Blazing Fast:** Starts up instantly using `lazy.nvim`.
+- **SQL Server**: integrated
+- **Lazydocker:** integrated
 
 ---
 
@@ -195,83 +197,29 @@ _(Actual Interface: File Tree, Status Line, and LSP support)_
    ```
 3. **Download the necessary items:**
 
-- Node.js (give LSP, Live Server, Treesitter)
+- Access the folder containing the files.
+  ```bash
+  cd ~/.config/nvim
+  # check
+  ls
+  ```
+- You must have the execute permission before running the program.
 
   ```bash
-  # ARCH
-  sudo pacman -S nodejs npm
-
-  # Ubuntu
-  sudo apt install nodejs npm
+  ls -l install.sh
+  chmod +x install.sh
   ```
 
-- Live Server
+- ▶️ Run:
   ```bash
-  npm install -g live-server
-  ```
-- Tmux
-
-  ```bash
-  # ARCH
-  sudo pacman -S tmux
-
-  # Ubuntu
-  sudo apt install tmux
+  ./install.sh
   ```
 
-- fd (File finder)
-
-  ```bash
-  # ARCH
-  sudo pacman -S fd
-
-  #Ubuntu
-  sudo apt install fd-find
-  ```
-
-4. **Optional but recommended**
-
-- Lazygit
-
-  ```bash
-  # Arch
-  sudo pacman -S lazygit
-
-  # Ubuntu
-  sudo apt install lazygit
-  ```
-
-- Docker (for LazyDocker)
-
-  ```bash
-  # Arch
-  sudo pacman -S docker docker-compose
-
-  # Ubuntu
-  sudo apt install docker docker-compose
-  ```
-
-- **Database (Dadbod)**: install database clients if you use SQL features
-
-  ```bash
-  # Arch
-  # PostgreSQL
-  sudo pacman -S postgresql
-  # MySQL
-  sudo pacman -S mysql
-
-  #Ubuntu
-  # PostgreSQL
-  sudo apt install postgresql
-  # MySQL
-  sudo apt install mysql
-  ```
-
-5. **Start Neovim**
+4. **Start Neovim**
    ```bash
    nvim
    ```
-6. ✅ **Quicheck** Run this inside Neovim
+5. ✅ **Quicheck** Run this inside Neovim
    `:checkhealth`
 
 **note:** you might see some errors during the first installation. simply restart neovim (`:q` then open nvim again) and run `:checkhealth` to verify everything is set up correctly.
